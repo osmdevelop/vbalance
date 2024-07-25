@@ -1,0 +1,25 @@
+/* eslint-disable prettier/prettier */
+
+// Material Kit 2 PRO React examples
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+
+// Routes
+import routes from "routes";
+
+function NavbarBlur() {
+    return (
+        <DefaultNavbar
+            routes={routes}
+            action={{
+                type: "external",
+                route: "https://www.creative-tim.com/product/material-kit-pro-react",
+                label: "contact",
+                color: "warning",
+            }}
+            relative
+            center
+        />
+    );
+}
+
+export default NavbarBlur;
