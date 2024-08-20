@@ -10,6 +10,8 @@ import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
+import TodayIcon from '@mui/icons-material/Today';
+
 // calendly
 
 // Images
@@ -35,8 +37,19 @@ function ContactUsTwo() {
                                         <MKTypography variant="h2" mb={1}>
                                             Контакти
                                         </MKTypography>
-                                        <MKTypography variant="body1" color="text" mb={2}>
-                                            Напишіть своє повідомлення
+                                        <MKTypography variant="body1" color="text" display="flex"
+                                    gap="10px" alignItems="center">
+                                            Напишіть своє повідомлення або
+                                            <MKButton 
+                                                variant="outlined" 
+                                                color="success"
+                                                component="a"  // Makes the button behave as a link
+                                                href="https://calendly.com/" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                >
+                                                забронюйте консультацію <TodayIcon/>
+                                            </MKButton>
                                         </MKTypography>
                                     </MKBox>
                                     <MKBox pt={0.5} pb={3} px={3}>

@@ -37,11 +37,16 @@ function TestimonialsThree() {
     const cards = [
         { id: 'card1', image: team2, name: 'Ольга', username: '36 років', review: 'Як 36-річна мати трьох дітей і співачка, мій досвід роботи з дієтологом Вірою Бойчук був трансформаційним. Спочатку я втратила 5 кілограмів лише за два тижні. Але справжній тріумф прийшов протягом наступних 8 місяців, коли я продовжувала застосовувати вчення Віри і загалом втратила 15 кг. Тепер моя вага стабільна, і я почуваюся просто чудово. Вона надала безцінні поради щодо харчування, які підходять моєму насиченому способу життя, а мережа жіночої підтримки, яку вона створила, була особливо цінною. Результати та отримані знання настільки вражаючі, що я вже записалася на наступний проект Віри.' },
         { id: 'card2', image: team3, name: 'Oksana', username: '33 y.o.', review: 'Після народження дитини мені було важко повернутися до здорової ваги. Робота з Вірою Бойчук стала переломним моментом. Її цілісний підхід охоплював все: від прийому вітамінів та гідратації до правильного харчування та гігієни сну. Під керівництвом Віри я скинула 7 кг і повністю змінила своє ставлення до їжі.' },
-        { id: 'card3', image: team4, name: 'Oleh', username: '29 years', review: 'As someone who struggled with high acidity, I was skeptical about changing my diet. It seemed easier to rely on medication like Omeprazole. However, working with Vira Boichuk transformed my approach to health. Initially, the transition was challenging - meal prep, frequent grocery trips, and making healthier choices felt overwhelming. But Vira`s guidance and constant support kept me motivated.' }
+        { id: 'card3', image: team4, name: 'Oleh', username: '29 years', review: 'As someone who struggled with high acidity, I was skeptical about changing my diet. It seemed easier to rely on medication like Omeprazole. However, working with Vira Boichuk transformed my approach to health. Initially, the transition was challenging - meal prep, frequent grocery trips, and making healthier choices felt overwhelming. But Vira`s guidance and constant support kept me motivated.' },
+        { id: 'card4', image: team4, name: 'Michael', username: '47 years', review: 'Роками я покладався на нездорову їжу. Робота з доктором Вірою Бойчук змінила мій підхід до харчування. Її експертне керівництво відкрило мені очі на глибокий вплив фруктів та овочів на наш організм. Впровадження її рекомендацій призвело до значних покращень: мій шлунково-кишковий тракт та підшлункова залоза працюють краще, а рівень глюкози нормалізувався. Переваги виходять за рамки фізичного здоров`я. Найбільш разючою зміною стало покращення мого загального самопочуття - мій настрій значно поліпшився, і я розвинув більш оптимістичний погляд на життя.' },
+        { id: 'card4', image: team4, name: 'Daniel', username: '56 years', review: 'Я ніколи не уявляв, що дієта може бути ключем до вирішення моїх хронічних проблем зі здоров`ям. Після років розчарування традиційними методами лікування, я відкрив для себе перетворюючу силу харчування завдяки дієтологу Вірі Бойчук. Протягом останніх п`яти років, керівництво доктора Віри було справді життєзмінним. Її персоналізований підхід до дієти та харчування звільнив мене від циклу хвороб та залежності від ліків. Не тільки мої проблеми зі здоров`ям відступили, але я також відчув дивовижне омолодження загального самопочуття.' },
+        { id: 'card4', image: team4, name: 'Lesia', username: '54 years', review: 'Як жінка, я зрозуміла, що моє здоров`я є наріжним каменем благополуччя та щастя моєї родини. Зіткнувшись з віковими змінами та бажаючи перейти на здоровіше харчування, я знала, що мені потрібна експертна порада. Після ретельного дослідження дієтологів у нашому місті, я знайшла доктора Віру Бойчук - рішення, за яке я безмежно вдячна. Підхід доктора Віри дійсно винятковий. Її високий професіоналізм поєднується з індивідуальним підходом та щирим співчуттям. Вона уважно слухає і надає постійну підтримку, пропонуючи рекомендації, які, при дотриманні, призводять до вражаючих покращень здоров`я та загального задоволення.' }
     ];
 
     return (
-        <MKBox position="relative" variant="gradient" bgColor="dark" py={2} mx={-2}>
+        <MKBox position="relative" variant="gradient" 
+        // bgColor="dark" 
+        py={2} mx={-2}>
             <MKBox
                 component="img"
                 src={bgRose}
@@ -50,9 +55,10 @@ function TestimonialsThree() {
                 top={0}
                 left={0}
                 width="100%"
+                height="100%"
                 opacity={0.8}
                 display={{ xs: "none", md: "block" }}
-                sx={{ backgroundSize: "cover" }}
+                sx={{ backgroundSize: "fit" }}
             />
             <Container>
                 <Grid
@@ -65,17 +71,17 @@ function TestimonialsThree() {
                             badgeContent="відгуки"
                             variant="contained"
                             color="white"
-                            size="sm"
+                            size="md"
                             container
                             sx={{ mb: 1 }}
                         />
-                        <MKTypography variant="h2" color="white" mb={1}>
-                            Відгуки від моїх клієнтів
+                        <MKTypography variant="h1" color="white" mb={1}>
+                            Відгуки моїх клієнтів
                         </MKTypography>
-                        <MKTypography variant="body1" color="white" fontWeight="light">
+                        {/* <MKTypography variant="body1" color="white" fontWeight="light">
                             If you&apos;re selected for them you&apos;ll also get three tickets, opportunity to
                             access Investor Office Hours and Mentor Hours and much more all for free.
-                        </MKTypography>
+                        </MKTypography> */}
                     </Grid>
                 </Grid>
                 <Grid container spacing={3} sx={{ mt: 10, mb: 6 }}>

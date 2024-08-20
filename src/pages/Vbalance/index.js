@@ -83,58 +83,59 @@ function Home() {
                 <MKBox />
                 {/* glassmorphism */}
                 <Container sx={{
-                    minHeight: '200px',
-                    minWidth: '100px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    paddingTop: '100px',
-                    // display: 'flex',
-                    // flexDirection: 'column',
-                    // justifyContent: 'center',
-                    // alignItems: 'center',
-                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)'
-                }}>
-                    <Grid
-                        container
-                        item
-                        xs={12}
-                        md={7}
-                        justifyContent={{ xs: "center", md: "start" }}
-                        sx={{ textAlign: { xs: "center", md: "left" } }}
-                    >
-                        <MKTypography
-                            variant="h1"
-                            color="white"
-                            mt={-10}
-                            sx={({ breakpoints, typography: { size } }) => ({
-                                [breakpoints.down("md")]: {
-                                    fontSize: size["3xl"],
-                                },
-                            })}
-                        >
-                            Vira Boichuk
-                        </MKTypography>
-                        <MKTypography
-                            variant="h4"
-                            color="white"
-                            mt={1}
-                            pr={{ md: 12, lg: 24, xl: 46 }}
-                            opacity={0.8}
-                        >
-                            Nutritionist, Nutrition Coach, Prevent Age Specialist
-                        </MKTypography>
-                        <Stack direction="row" spacing={1} mt={6} mb={3}>
-                            <MKButton variant="gradient" color="warning">
-                                explore
-                            </MKButton>
-                            <MKButton variant="text" color="white">
-                                contact me
-                            </MKButton>
-                        </Stack>
-                    </Grid>
-                </Container>
+      minHeight: '200px',
+      minWidth: '100px',
+      backgroundColor: 'rgba(34, 44, 0, 0.5)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: '16px',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      paddingTop: '100px', // Consider adjusting or removing to improve centering
+      marginTop: "150px",
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center', // Ensures vertical centering
+      alignItems: 'center', // Ensures horizontal centering
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)'
+    }}>
+      <Grid
+        container
+        item
+        xs={12}
+        md={7}
+        justifyContent="center" // Centers content within the grid for all viewport sizes
+        sx={{ textAlign: "center", width: '100%' }} // Ensures text alignment is centered
+      >
+        <MKTypography
+          variant="h1"
+          color="white"
+          mt={-10}
+          sx={({ breakpoints, typography: { size } }) => ({
+            [breakpoints.down("md")]: {
+              fontSize: size["3xl"],
+            },
+          })}
+        >
+          Vira Boichuk
+        </MKTypography>
+        <MKTypography
+          variant="h3"
+          color="white"
+          mt={1}
+        //   pr={{ md: 12, lg: 24, xl: 46 }}
+          opacity={0.8}
+        >
+          Nutritionist, Nutrition Coach, Prevent Age Specialist
+        </MKTypography>
+        <Stack direction="row" spacing={4} mt={6} mb={3}>
+          <MKButton variant="gradient" size="large" color="warning">
+            explore
+          </MKButton>
+          <MKButton variant="text" color="white">
+            contact me
+          </MKButton>
+        </Stack>
+      </Grid>
+    </Container>
                 <MKBox />
             </MKBox>
             {/* <MKBox
