@@ -63,7 +63,7 @@ function Home() {
             /> */}
             {/* <NavBar /> */}
             <MKBox
-                minHeight="80vh"
+                minHeight="90vh"
                 width="100%"
                 sx={{
                     backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
@@ -73,14 +73,29 @@ function Home() {
                         )}, url(${bgImage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    display: "grid",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
                     placeItems: "center",
                 }}
             >
                 <NavBar />
                 <MKBox />
-
-                <Container>
+                {/* glassmorphism */}
+                <Container sx={{
+                    minHeight: '200px',
+                    minWidth: '100px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    backdropFilter: 'blur(10px)',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    paddingTop: '100px',
+                    // display: 'flex',
+                    // flexDirection: 'column',
+                    // justifyContent: 'center',
+                    // alignItems: 'center',
+                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)'
+                }}>
                     <Grid
                         container
                         item
@@ -122,7 +137,7 @@ function Home() {
                 </Container>
                 <MKBox />
             </MKBox>
-            <MKBox
+            {/* <MKBox
                 display="flex"
                 alignItems="center"
                 minHeight="100vh"
@@ -199,7 +214,7 @@ function Home() {
                         </Stack>
                     </Grid>
                 </Container>
-            </MKBox>
+            </MKBox> */}
             <Card
                 sx={{
                     p: 2,
