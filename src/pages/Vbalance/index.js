@@ -46,6 +46,7 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg_vb/bgbalance1.png";
+import bgCTA from "assets/images/bGavocado.jpg"
 
 function Home() {
     return (
@@ -243,7 +244,9 @@ function Home() {
                         p={6}
                         sx={{
                             backgroundImage:
-                                "url(https://img.freepik.com/free-photo/top-view-green-vegetables-with-copy-space_23-2148853317.jpg?t=st=1721494320~exp=1721497920~hmac=1fad721f1a709f147ad9f04dea41f75237d99b50246a44238daf25586a191f31&w=1380)",
+                                `url(${bgCTA})`,
+                                backgroundSize: 'cover',         // Ensure the image covers the entire area
+        backgroundPosition: 'center', 
                         }}
                     >
                         <Grid container spacing={3} alignItems="center">

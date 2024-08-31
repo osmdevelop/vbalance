@@ -20,7 +20,7 @@ import SimpleReviewCard from "examples/Cards/ReviewCards/SimpleReviewCard";
 
 // Images
 // import bgPattern from "assets/images/shapes/pattern-lines.svg";
-import bgRose from "assets/images/rose-petals.png"
+import bgFeedback from "assets/images/feedbacks-bg.jpg"
 // import bgAvocado from "assets/images/bGavocado.jpg"
 
 import team2 from "assets/images/team-2.jpg";
@@ -48,18 +48,23 @@ function TestimonialsThree() {
         // bgColor="dark" 
         py={2} mx={-2}>
             <MKBox
-                component="img"
-                src={bgRose}
-                alt="background-pattern"
-                position="absolute"
-                top={0}
-                left={0}
-                width="100%"
-                height="100%"
-                opacity={0.8}
-                display={{ xs: "none", md: "block" }}
-                sx={{ backgroundSize: "fit" }}
+            component="img"
+            src={bgFeedback}
+            alt="background-pattern"
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"  // Ensures the image takes the full width of its container
+            height="100%" // Ensures the image takes the full height of its container
+            opacity={0.8}
+            display={{ xs: "none", md: "block" }}
+            sx={{
+                backgroundSize: "cover",      // Makes sure the background covers the entire container
+                backgroundPosition: "center", // Centers the background image
+                objectFit: "cover"           // Ensures the image covers the entire container without distortion
+            }}
             />
+
             <Container>
                 <Grid
                     container

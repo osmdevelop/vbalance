@@ -44,7 +44,7 @@ function ContactUsTwo() {
                                                 variant="outlined" 
                                                 color="success"
                                                 component="a"  // Makes the button behave as a link
-                                                href="https://calendly.com/" 
+                                                href="https://calendly.com/olehsmlk/30min" 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 >

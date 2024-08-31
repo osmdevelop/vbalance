@@ -102,7 +102,7 @@ import Typography from "layouts/sections/elements/typography";
 const routes = [
   {
     name: "home",
-    route: "/pages/Vbalance",
+    route: "/pages/Vbalance`",
     component: <Home />,
   },
   {
