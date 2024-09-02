@@ -15,10 +15,15 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+import React from 'react';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import Stack from "@mui/material/Stack";
+import { useSpring, animated } from 'react-spring';
+
+// import { motion} from 'framer-motion';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+// import Stack from "@mui/material/Stack";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -27,7 +32,8 @@ import MKButton from "components/MKButton";
 
 // Material Kit 2 PRO React examples
 // import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
+// FOOTER
+// import DefaultFooter from "examples/Footers/DefaultFooter";
 import NavBar from "./components/NavBar"
 
 // Coworking page sections
@@ -37,20 +43,33 @@ import Information from "./sections/Information";
 import TestimonialsThree from "./sections/TestimonialsThree";
 // import Testimonials from "pages/LandingPages/Coworking/sections/Testimonials";
 // import AboutUs from "pages/LandingPages/Coworking/sections/AboutUs";
-import Places from "pages/LandingPages/Coworking/sections/Places";
+import Blog from "./sections/Blog";
 import Contact from "./sections/Contact"
 
 // Routes
 // import routes from "routes";
-import footerRoutes from "footer.routes";
+// import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg_vb/bgbalance1.png";
 import bgCTA from "assets/images/bGavocado.jpg"
 
 function Home() {
+    const bounce = useSpring({
+    from: { y: -20 },  // Start position
+    to: { y: 0 },      // End position
+    config: {
+      mass: 1,
+      stiffness: 200,
+      damping: 10,
+    },
+    reset: true,       // Reset animation when the component is remounted
+    loop: { reverse: true },  // Make it bounce back and forth
+  });
+
     return (
         <>
+        
             {/* <DefaultNavbar
                 routes={routes}
                 action={{
@@ -84,20 +103,21 @@ function Home() {
                 <MKBox />
                 {/* glassmorphism */}
                 <Container sx={{
-      minHeight: '200px',
-      minWidth: '100px',
-      backgroundColor: 'rgba(34, 44, 0, 0.5)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '16px',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
-      paddingTop: '100px', // Consider adjusting or removing to improve centering
-      marginTop: "150px",
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center', // Ensures vertical centering
-      alignItems: 'center', // Ensures horizontal centering
-      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)'
-    }}>
+                minHeight: '250px',
+                minWidth: '100px',
+                backgroundColor: 'rgba(34, 44, 0, 0.5)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                paddingTop: '100px', // Consider adjusting or removing to improve centering
+                marginTop: "150px",
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between', // Ensures vertical centering
+                alignItems: 'center', // Ensures horizontal centering
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                marginBottom: "-20px",
+                }}>
       <Grid
         container
         item
@@ -127,96 +147,22 @@ function Home() {
         >
           Nutritionist, Nutrition Coach, Prevent Age Specialist
         </MKTypography>
-        <Stack direction="row" spacing={4} mt={6} mb={3}>
-          <MKButton variant="gradient" size="large" color="warning">
+        {/* <Stack direction="row" spacing={4} mt={6} mb={3}>
+          <MKButton variant="gradient" size="large" color="primary">
             explore
           </MKButton>
           <MKButton variant="text" color="white">
             contact me
           </MKButton>
-        </Stack>
+        </Stack> */}
+
       </Grid>
+            <animated.div style={bounce}>
+                <KeyboardDoubleArrowDownIcon sx={{ color: "#ffffff90", transform: "scale(2)" }} />
+            </animated.div>
     </Container>
                 <MKBox />
             </MKBox>
-            {/* <MKBox
-                display="flex"
-                alignItems="center"
-                minHeight="100vh"
-                sx={{
-                    backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) => `${linearGradient(rgba(gradients.dark.main, 0.4), rgba(gradients.dark.state, 0.4))}, url(${bgImage})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <Container>
-                    <Grid
-                        container
-                        item
-                        xs={12}
-                        lg={6}
-                        flexDirection="column"
-                        justifyContent="center"
-                        alignItems="center"
-                        textAlign="center"
-                        mx="auto"
-                    >
-                        <MKTypography
-                            variant="h1"
-                            color="white"
-                            sx={({ breakpoints, typography: { size } }) => ({
-                                [breakpoints.down("md")]: {
-                                    fontSize: size["3xl"],
-                                },
-                            })}
-                            mb={3}
-                        >
-                            Work with an amazing
-                        </MKTypography>
-                        <MKTypography variant="body1" color="white" mt={1} mb={{ xs: 3, sm: 8 }} px={3}>
-                            We&apos;re constantly trying to express ourselves and actualize our dreams. If you
-                            have the opportunity to play this game. If you have the opportunity to play this game.
-                        </MKTypography>
-                        <MKTypography variant="h6" color="white" textTransform="uppercase" mb={3}>
-                            connect with us on:
-                        </MKTypography>
-                        <Stack direction="row" spacing={6} mx="auto">
-                            <MKTypography
-                                component={""}
-                                href="#"
-                                variant="body2"
-                                onClick={(e) => e.preventDefault()}
-                            >
-                                <MKBox component="i" color="white" className="fab fa-facebook" />
-                            </MKTypography>
-                            <MKTypography
-                                component={""}
-                                href="#"
-                                variant="body2"
-                                onClick={(e) => e.preventDefault()}
-                            >
-                                <MKBox component="i" color="white" className="fab fa-instagram" />
-                            </MKTypography>
-                            <MKTypography
-                                component={""}
-                                href="#"
-                                variant="body2"
-                                onClick={(e) => e.preventDefault()}
-                            >
-                                <MKBox component="i" color="white" className="fab fa-twitter" />
-                            </MKTypography>
-                            <MKTypography
-                                component={""}
-                                href="#"
-                                variant="body2"
-                                onClick={(e) => e.preventDefault()}
-                            >
-                                <MKBox component="i" color="white" className="fab fa-google-plus" />
-                            </MKTypography>
-                        </Stack>
-                    </Grid>
-                </Container>
-            </MKBox> */}
             <Card
                 sx={{
                     p: 2,
@@ -233,7 +179,7 @@ function Home() {
                 <Information />
                 <TestimonialsThree />
                 {/* <AboutUs /> */}
-                <Places />
+                <Blog />
                 <Container>
                     <MKBox
                         display="flex"
@@ -267,9 +213,9 @@ function Home() {
                 </Container>
                 <Contact />
             </Card>
-            <MKBox pt={6} px={1} mt={6}>
+            {/* <MKBox pt={6} px={1} mt={6}>
                 <DefaultFooter content={footerRoutes} />
-            </MKBox>
+            </MKBox> */}
         </>
     );
 }

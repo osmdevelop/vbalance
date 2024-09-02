@@ -84,6 +84,11 @@ export default {
     focus: "#2c3c58",
   },
 
+  salmon: {
+    main: "#FA8072",
+    focus: "#FFB6C1",
+  },
+
   grey: {
     100: "#f8f9fa",
     200: "#f0f2f5",
@@ -135,6 +140,11 @@ export default {
     dark: {
       main: "#42424a",
       state: "#191919",
+    },
+
+    salmon: {
+      main: "#FFD1DC",
+      state: "#FF8A9A",
     },
   },
 
@@ -240,6 +250,11 @@ export default {
       background: "#8097bf",
       text: "#1e2e4a",
     },
+
+    salmon: {
+      background: "#FA8072",
+      text: "#1e2e4a",
+    },
   },
 
   coloredShadows: {
@@ -251,6 +266,7 @@ export default {
     error: "#f44336",
     light: "#adb5bd",
     dark: "#404040",
+    salmon: "#F56B5E",
   },
 
   inputBorderColor: "#d2d6da",

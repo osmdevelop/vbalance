@@ -155,7 +155,7 @@ function ContactUsTwo() {
                                                 ml={2}
                                                 fontWeight="regular"
                                             >
-                                                vira@vbalance.food
+                                                vira.boichuk@vbalance.food
                                             </MKTypography>
                                         </MKBox>
                                         <MKBox display="flex" color="white" p={1}>
@@ -170,10 +170,10 @@ function ContactUsTwo() {
                                                 ml={2}
                                                 fontWeight="regular"
                                             >
-                                                Online
+                                                Online / Illinois, USA
                                             </MKTypography>
                                         </MKBox>
-                                        <MKBox mt={3}>
+                                        {/* <MKBox mt={3}>
                                             <MKButton variant="text" color="white" size="large" iconOnly>
                                                 <i className="fab fa-facebook" style={{ fontSize: "1.25rem" }} />
                                             </MKButton>
@@ -186,7 +186,7 @@ function ContactUsTwo() {
                                             <MKButton variant="text" color="white" size="large" iconOnly>
                                                 <i className="fab fa-instagram" style={{ fontSize: "1.25rem" }} />
                                             </MKButton>
-                                        </MKBox>
+                                        </MKBox> */}
                                     </MKBox>
                                 </MKBox>
                             </Grid>

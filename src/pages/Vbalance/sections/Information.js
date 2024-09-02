@@ -102,12 +102,12 @@ function Information() {
                             <MKBox
                                 color="white"
                                 // bgColor="#338737"
-                                variant="gradient"
+                                // variant="gradient"
                                 borderRadius="lg"
                                 shadow="lg"
                                 opacity={1}
                                 p={3}
-                                sx={{ backgroundColor: "#7ceb81" }}
+                                sx={{ backgroundColor: "#FA8072" }}
                             >
                                 Яку б програму ви не обрали - професійний супровід Віри забезпечить вашу впевненість на шляху до ідеального здоров&apos;я!
 

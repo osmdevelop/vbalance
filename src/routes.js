@@ -40,7 +40,8 @@ Coded by www.creative-tim.com
 import Icon from "@mui/material/Icon";
 
 // Pages
-import Home from "layouts/pages/vbalance";
+// import Home from "layouts/pages/vbalance";
+import Summary from "pages/Vbalance/sections/Summary";
 import CoworkingPage from "layouts/pages/landing-pages/coworking";
 import Rental from "layouts/pages/landing-pages/rental";
 import AboutUs from "layouts/pages/company/about-us";
@@ -101,9 +102,9 @@ import Typography from "layouts/sections/elements/typography";
 
 const routes = [
   {
-    name: "home",
-    route: "/pages/Vbalance`",
-    component: <Home />,
+    name: "About me",
+    route: "#about",
+    component: <Summary />,
   },
   {
     name: "pages",

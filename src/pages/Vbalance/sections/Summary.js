@@ -5,7 +5,7 @@ import { Container, Typography } from '@mui/material';
 
 const Summary = () => {
     return (
-        <Container maxWidth="md" style={{ marginTop: '20px', marginBottom: '20px' }}>
+        <Container id="summary" maxWidth="md" style={{ marginTop: '20px', marginBottom: '20px' }}>
             <Typography variant="h2" component="h1" gutterBottom>
                 Відкрийте шлях до гармонії тіла і душі
             </Typography>
