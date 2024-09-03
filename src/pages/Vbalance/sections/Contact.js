@@ -20,7 +20,7 @@ import bgImage from "assets/images/examples/blog2.jpg";
 function ContactUsTwo() {
     return (
         <MKBox component="section" py={{ xs: 0, lg: 6 }}>
-            <Container>
+            <Container id="contact">
                 <Grid container item px={6}>
                     <MKBox
                         width="100%"
@@ -52,39 +52,50 @@ function ContactUsTwo() {
                                             </MKButton>
                                         </MKTypography>
                                     </MKBox>
-                                    <MKBox pt={0.5} pb={3} px={3}>
-                                        <Grid container>
+                                    <form name="inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+
+                                        <MKBox pt={0.5} pb={3} px={3}>
+                                            <Grid container>
+                                            <input type="hidden" name="form-name" value="inquiry" />
+                                            <input type="hidden" name="bot-field" />
+                                            
                                             <Grid item xs={12} pr={1} mb={3}>
                                                 <MKInput
-                                                    variant="standard"
-                                                    label="Ім'я"
-                                                    placeholder="Моє ім'я"
-                                                    InputLabelProps={{ shrink: true }}
-                                                    fullWidth
+                                                variant="standard"
+                                                label="Ім'я"
+                                                placeholder="Моє ім'я"
+                                                InputLabelProps={{ shrink: true }}
+                                                fullWidth
+                                                name="name"
+                                                required
                                                 />
                                             </Grid>
                                             <Grid item xs={12} pr={1} mb={3}>
                                                 <MKInput
-                                                    variant="standard"
-                                                    label="Тема"
-                                                    placeholder="Звертаюся щодо..."
-                                                    InputLabelProps={{ shrink: true }}
-                                                    fullWidth
+                                                variant="standard"
+                                                label="Тема"
+                                                placeholder="Звертаюся щодо..."
+                                                InputLabelProps={{ shrink: true }}
+                                                fullWidth
+                                                name="subject"
+                                                required
                                                 />
                                             </Grid>
                                             <Grid item xs={12} pr={1} mb={3}>
                                                 <MKInput
-                                                    variant="standard"
-                                                    label="Ваше повідомлення"
-                                                    placeholder="Хочу написати про..."
-                                                    InputLabelProps={{ shrink: true }}
-                                                    fullWidth
-                                                    multiline
-                                                    rows={6}
+                                                variant="standard"
+                                                label="Ваше повідомлення"
+                                                placeholder="Хочу написати про..."
+                                                InputLabelProps={{ shrink: true }}
+                                                fullWidth
+                                                multiline
+                                                rows={6}
+                                                name="message"
+                                                required
                                                 />
                                             </Grid>
-                                        </Grid>
-                                        <Grid
+                                            </Grid>
+                                            <Grid
                                             container
                                             item
                                             xs={12}
@@ -92,12 +103,15 @@ function ContactUsTwo() {
                                             justifyContent="flex-end"
                                             textAlign="right"
                                             ml="auto"
-                                        >
-                                            <MKButton variant="gradient" color="success">
+                                            >
+                                            <MKButton variant="gradient" color="success" type="submit">
                                                 Надіслати
                                             </MKButton>
-                                        </Grid>
-                                    </MKBox>
+                                            </Grid>
+                                        </MKBox>
+                                        </form>
+
+
                                 </MKBox>
                             </Grid>
                             <Grid
