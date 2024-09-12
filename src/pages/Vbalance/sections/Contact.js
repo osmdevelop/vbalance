@@ -32,7 +32,7 @@ function ContactUsTwo() {
                     >
                         <Grid container spacing={3}>
                             <Grid item xs={12} lg={7}>
-                                <MKBox component="form" p={2} method="post" action="/">
+                                <form name="inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/">
                                     <MKBox px={3} py={{ xs: 2, sm: 6 }}>
                                         <MKTypography variant="h2" mb={1}>
                                             Контакти
@@ -111,7 +111,7 @@ function ContactUsTwo() {
                                         </form>
 
 
-                                </MKBox>
+                                </form>
                             </Grid>
                             <Grid
                                 item
