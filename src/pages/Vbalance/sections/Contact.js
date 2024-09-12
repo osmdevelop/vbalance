@@ -36,7 +36,11 @@ function Contact() {
   };
     return (
         <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
+            <form name="contact" netlify hidden>
+    <p>
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
+</form>
       <p>
         <label htmlFor="name">Your ame: </label>
         <input 
