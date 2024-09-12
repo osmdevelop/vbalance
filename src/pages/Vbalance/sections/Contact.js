@@ -22,53 +22,76 @@ function Contact() {
     const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleSubmit
- = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+  const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    // You can add any custom logic here, like sending data to an external service
-
-    console.log('Form submitted:', { name, email }); // Log form data to the console
-
-    // Reset the form fields after submission
-    setName('');
-    setEmail('');
+  const formData = {
+    name: name,
+    email: email,
   };
-    return (
-        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-            <form name="contact" netlify hidden>
-    <p>
-        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-    </p>
-</form>
-      <p>
-        <label htmlFor="name">Your ame: </label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-          required 
-        />
-      </p>
-      <p>
-        <label htmlFor="email">Email:
- </label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required 
-        />
-      </p>
 
-      <p>
+  try {
+    const response = await fetch('/.netlify/functions/submit-form', { // Adjust the path if your function has a different name
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      console.log('Form submitted successfully!');
+
+      // You might want to display a success message to the user here
+      setName('');
+      setEmail('');
+    } else {
+      console.error('Error submitting form:', response.status);
+      // Handle errors gracefully, perhaps display an error message to the user
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    // Handle network errors or other unexpected issues
+  }
+};
+
+    return (
+    <div>
+            <form name="contact" netlify hidden>
+            <p>
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+        </form>
+        <p>
+        <label htmlFor="name">Your Names: </label>
+        <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            required
+    
+        />
+        </p>
+        <p>
+        <label htmlFor="email">Email:</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email"
+    
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required 
+        />
+        </p> 
+
+
+        <p>
         <button type="submit" onClick={handleSubmit}>Send</button>
-      </p>
-    </form>
+        </p>
+    </div>
   );
 }
 
