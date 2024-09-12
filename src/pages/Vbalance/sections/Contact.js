@@ -52,7 +52,6 @@ function ContactUsTwo() {
                                             </MKButton>
                                         </MKTypography>
                                     </MKBox>
-                                    <form name="inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/">
                                         <MKBox pt={0.5} pb={3} px={3}>
                                             <Grid container>
                                             <input type="hidden" name="form-name" value="inquiry" />
@@ -108,9 +107,6 @@ function ContactUsTwo() {
                                             </MKButton>
                                             </Grid>
                                         </MKBox>
-                                        </form>
-
-
                                 </form>
                             </Grid>
                             <Grid
