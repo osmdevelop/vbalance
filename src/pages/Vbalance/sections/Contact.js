@@ -18,7 +18,7 @@ import React, { useState } from 'react';
 // Images
 // import bgImage from "assets/images/examples/blog2.jpg";
 
-function ContactUsTwo() {
+function Contact() {
     const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -35,7 +35,8 @@ function ContactUsTwo() {
     setEmail('');
   };
     return (
-        <form name="contact" netlify data-netlify-honeypot="bot-field"> {/* Netlify attributes */}
+        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
       <p>
         <label htmlFor="name">Your ame: </label>
         <input 
@@ -67,4 +68,4 @@ function ContactUsTwo() {
   );
 }
 
-export default ContactUsTwo;
+export default Contact;
