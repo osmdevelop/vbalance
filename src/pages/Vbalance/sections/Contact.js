@@ -6,11 +6,11 @@ import Grid from "@mui/material/Grid";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
-import MKInput from "components/MKInput";
-import MKButton from "components/MKButton";
+// import MKInput from "components/MKInput";
+// import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
-import TodayIcon from '@mui/icons-material/Today';
+// import TodayIcon from '@mui/icons-material/Today';
 
 // calendly
 
@@ -32,7 +32,7 @@ function ContactUsTwo() {
                     >
                         <Grid container spacing={3}>
                             <Grid item xs={12} lg={7}>
-                                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/" netlify>
+                                {/* <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/" netlify>
                                     <MKBox px={3} py={{ xs: 2, sm: 6 }}>
                                         <MKTypography variant="h2" mb={1}>
                                             Контакти
@@ -107,7 +107,18 @@ function ContactUsTwo() {
                                             </MKButton>
                                             </Grid>
                                         </MKBox>
-                                </form>
+                                </form> */}
+                                <form name="contact" netlify>
+                                    <p>
+                                        <label>Name <input type="text" name="name" /></label>
+                                    </p>
+                                    <p>
+                                        <label>Email <input type="email" name="email" /></label>
+                                    </p>
+                                    <p>
+                                        <button type="submit">Send</button>
+                                    </p>
+                                    </form>
                             </Grid>
                             <Grid
                                 item
