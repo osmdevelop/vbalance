@@ -57,13 +57,13 @@ function Contact() {
 
     return (
     <div>
-            <form name="contact" netlify hidden>
+            <form name="contact" hidden>
             <p>
                 <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
             </p>
         </form>
         <p>
-        <label htmlFor="name">Your Names: </label>
+        <label htmlFor="name">Your Name: </label>
         <input 
             type="text" 
             id="name" 

@@ -44,7 +44,7 @@ import TestimonialsThree from "./sections/TestimonialsThree";
 // import Testimonials from "pages/LandingPages/Coworking/sections/Testimonials";
 // import AboutUs from "pages/LandingPages/Coworking/sections/AboutUs";
 import Blog from "./sections/Blog";
-import Contact from "./sections/Contact"
+import Formspree from "./sections/Formspree"
 
 // Routes
 // import routes from "routes";
@@ -211,7 +211,7 @@ function Home() {
                         </Grid>
                     </MKBox>
                 </Container>
-                <Contact />
+                <Formspree />
             </Card>
             {/* <MKBox pt={6} px={1} mt={6}>
                 <DefaultFooter content={footerRoutes} />
